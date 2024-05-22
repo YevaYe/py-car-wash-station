@@ -11,16 +11,11 @@ class CarWashStation:
                  clean_power: int, average_rating: float,
                  count_of_ratings: int) -> None:
         self.distance_from_city_center = distance_from_city_center
-        # rom 1.0 to 10.0
-
         self.clean_power = clean_power
-
         self.average_rating = average_rating
-        # from 1.0 to 5.0, rounded to 1 decimal
-
         self.count_of_ratings = count_of_ratings
 
-    def serve_cars(self, cars: list[Car]) -> float:
+    def serve_cars(self, cars: list[Car]) -> (float, int):
         total_price = 0
         for car in cars:
             if self.clean_power > car.clean_mark:
